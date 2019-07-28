@@ -1,0 +1,10 @@
+H:\CSharp\assessment\assessment\obj\Debug\assessment.csprojAssemblyReference.cache
+H:\CSharp\assessment\assessment\obj\Debug\assessment.Form1.resources
+H:\CSharp\assessment\assessment\obj\Debug\assessment.Properties.Resources.resources
+H:\CSharp\assessment\assessment\obj\Debug\assessment.csproj.GenerateResource.cache
+H:\CSharp\assessment\assessment\obj\Debug\assessment.csproj.CoreCompileInputs.cache
+H:\CSharp\assessment\assessment\bin\Debug\assessment.exe.config
+H:\CSharp\assessment\assessment\bin\Debug\assessment.exe
+H:\CSharp\assessment\assessment\bin\Debug\assessment.pdb
+H:\CSharp\assessment\assessment\obj\Debug\assessment.exe
+H:\CSharp\assessment\assessment\obj\Debug\assessment.pdb
