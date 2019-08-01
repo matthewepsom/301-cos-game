@@ -35,9 +35,15 @@ namespace assessment
         }
         public void moveape()
         {
-            y += 5;
+            y += 10;
 
             apeRec.Location = new Point(x, y);
+            if (apeRec.Location.Y > 400)
+            {
+                y = 20;
+                apeRec.Location = new Point(x, y);
+            }
+
         }
 
     }
