@@ -35,7 +35,7 @@ namespace assessment
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
         }
 
         private void pnlGallery_Paint(object sender, PaintEventArgs e)
@@ -86,14 +86,53 @@ namespace assessment
 
         }
 
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            score = 0;
+            lblScore.Text = score.ToString();
+            lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
+            tmrApe.Enabled = true;
+            tmrtonk.Enabled = true;
+
+        }
+
+        private void mnuStop_Click(object sender, EventArgs e)
+        {
+            tmrApe.Enabled = false;
+            tmrtonk.Enabled = false;
+
+        }
+
         private void tmrApe_Tick(object sender, EventArgs e)
         {
             for (int i = 0; i < 7; i++)
             {
-               ape[i].moveape();
+                score += ape[i].score;// get score from Planet class (in movePlanet method)
+                lblScore.Text = score.ToString();// display score
+                ape[i].moveape();
+                if (tonk.tonkRec.IntersectsWith(ape[i].apeRec))
+                {
+                    //reset tonk[i] back to top of panel
+                    ape[i].y = 30; // set  y value of tonkRec
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    checkLives();
+                }
+
             }
             pnlGallery.Invalidate();//makes the paint event fire to redraw the panel
         }
+        private void checkLives()
+        {
+            if (lives == 0)
+            {
+                tmrApe.Enabled = false;
+                tmrtonk.Enabled = false;
+                MessageBox.Show("You Failed to Defend!");
+
+            }
+        }
+
     }
 }
 

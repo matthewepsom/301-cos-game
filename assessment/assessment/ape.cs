@@ -40,6 +40,7 @@ namespace assessment
             apeRec.Location = new Point(x, y);
             if (apeRec.Location.Y > 400)
             {
+                score += 1;// add 1 to score when ape reaches bottom of panel
                 y = 20;
                 apeRec.Location = new Point(x, y);
             }

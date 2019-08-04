@@ -37,11 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtfuel = new System.Windows.Forms.Label();
+            this.txtLives = new System.Windows.Forms.Label();
             this.txtCallsign = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,9 +98,9 @@
             this.lblScore.AutoSize = true;
             this.lblScore.Location = new System.Drawing.Point(549, 249);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(35, 13);
+            this.lblScore.Size = new System.Drawing.Size(13, 13);
             this.lblScore.TabIndex = 4;
-            this.lblScore.Text = "label4";
+            this.lblScore.Text = "0";
             // 
             // label5
             // 
@@ -111,14 +111,14 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Fuel Cells";
             // 
-            // txtfuel
+            // txtLives
             // 
-            this.txtfuel.AutoSize = true;
-            this.txtfuel.Location = new System.Drawing.Point(539, 347);
-            this.txtfuel.Name = "txtfuel";
-            this.txtfuel.Size = new System.Drawing.Size(35, 13);
-            this.txtfuel.TabIndex = 6;
-            this.txtfuel.Text = "label6";
+            this.txtLives.AutoSize = true;
+            this.txtLives.Location = new System.Drawing.Point(539, 347);
+            this.txtLives.Name = "txtLives";
+            this.txtLives.Size = new System.Drawing.Size(13, 13);
+            this.txtLives.TabIndex = 6;
+            this.txtLives.Text = "5";
             // 
             // txtCallsign
             // 
@@ -130,25 +130,27 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.stopToolStripMenuItem});
+            this.mnuStart,
+            this.mnuStop});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(679, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // startToolStripMenuItem
+            // mnuStart
             // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.startToolStripMenuItem.Text = "Start";
+            this.mnuStart.Name = "mnuStart";
+            this.mnuStart.Size = new System.Drawing.Size(43, 20);
+            this.mnuStart.Text = "Start";
+            this.mnuStart.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
-            // stopToolStripMenuItem
+            // mnuStop
             // 
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.stopToolStripMenuItem.Text = "Stop";
+            this.mnuStop.Name = "mnuStop";
+            this.mnuStop.Size = new System.Drawing.Size(43, 20);
+            this.mnuStop.Text = "Stop";
+            this.mnuStop.Click += new System.EventHandler(this.mnuStop_Click);
             // 
             // Form1
             // 
@@ -156,7 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 506);
             this.Controls.Add(this.txtCallsign);
-            this.Controls.Add(this.txtfuel);
+            this.Controls.Add(this.txtLives);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.label3);
@@ -188,11 +190,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label txtfuel;
+        private System.Windows.Forms.Label txtLives;
         private System.Windows.Forms.TextBox txtCallsign;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuStart;
+        private System.Windows.Forms.ToolStripMenuItem mnuStop;
     }
 }
 
