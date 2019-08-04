@@ -36,6 +36,9 @@ namespace assessment
         private void Form1_Load(object sender, EventArgs e)
         {
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
+            MessageBox.Show("Yikes");
+            txtCallsign.Focus();
+
         }
 
         private void pnlGallery_Paint(object sender, PaintEventArgs e)
