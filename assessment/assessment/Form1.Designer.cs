@@ -42,17 +42,22 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuStart = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrbigman = new System.Windows.Forms.Timer(this.components);
+            this.tmrShoot = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlGallery
             // 
             this.pnlGallery.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pnlGallery.BackgroundImage = global::assessment.Properties.Resources.background;
+            this.pnlGallery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlGallery.Location = new System.Drawing.Point(12, 94);
             this.pnlGallery.Name = "pnlGallery";
-            this.pnlGallery.Size = new System.Drawing.Size(500, 400);
+            this.pnlGallery.Size = new System.Drawing.Size(500, 385);
             this.pnlGallery.TabIndex = 0;
             this.pnlGallery.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGallery_Paint);
+            this.pnlGallery.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlGallery_MouseDown);
             // 
             // tmrApe
             // 
@@ -152,6 +157,16 @@
             this.mnuStop.Text = "Stop";
             this.mnuStop.Click += new System.EventHandler(this.mnuStop_Click);
             // 
+            // tmrbigman
+            // 
+            this.tmrbigman.Enabled = true;
+            this.tmrbigman.Tick += new System.EventHandler(this.tmrbigman_Tick);
+            // 
+            // tmrShoot
+            // 
+            this.tmrShoot.Enabled = true;
+            this.tmrShoot.Tick += new System.EventHandler(this.tmrShoot_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +210,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuStart;
         private System.Windows.Forms.ToolStripMenuItem mnuStop;
+        private System.Windows.Forms.Timer tmrbigman;
+        private System.Windows.Forms.Timer tmrShoot;
     }
 }
 
