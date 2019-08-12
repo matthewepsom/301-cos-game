@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace assessment
 {
@@ -11,9 +13,9 @@ namespace assessment
         public int x, y, width, height;
         public int rocketRotated;
         public double xSpeed, ySpeed;
-        public Image rocket;//variable for the bullets image
+        public Image Rocket;//variable for the bullets image
         public Rectangle rocketRec;//variable for a rectangle to place our image in
-        public Matrix matrixBullet;//matrix to enable us to rotate bullet in the same angle as the f14
+        public Matrix matrixrocket;//matrix to enable us to rotate bullet in the same angle as the f14
         Point centrerocket;//centre of bullet
                            // in the following constructor we pass in the values of f14Rec and the rotation angle of the f14
                            // this gives us the position of the f14 which we can then use to place the
@@ -25,7 +27,7 @@ namespace assessment
         {
             width = 20; // width of bullet
             height = 30; // height of bullet
-            rocket = Image.FromFile("rocket.png"); // image location and file 
+            Rocket = Image.FromFile("rocket.png"); // image location and file 
             rocketRec = new Rectangle(x, y, width, height);
 
             //this code works out the speed of the bullet to be used in the movebullet method
@@ -48,14 +50,14 @@ namespace assessment
             //instantiate a Matrix object called matrixbullet
             matrixrocket = new Matrix();
             //rotate the matrix (in this case bulletRec) about its centre
-            matrixBullet.RotateAt(rocketRotated, rocketBullet);
+            matrixrocket.RotateAt(rocketRotated, centrerocket);
             //Set the current draw location to the rotated matrix point i.e. where bulletRec is now
-            g.Transform = matrixBullet;
+            g.Transform = matrixrocket;
             //Draw the bullet
-            g.DrawImage(rocket, rocketRec);
+            g.DrawImage(Rocket, rocketRec);
 
         }
-        public void moveBullet(Graphics g)
+        public void moverocket(Graphics g)
         {
             x += (int)xSpeed;//cast double to an integer value
             y -= (int)ySpeed;

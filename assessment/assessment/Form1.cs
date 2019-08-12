@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using System.Drawing.Drawing2D;
+using System.Text.RegularExpressions;
 
 namespace assessment
 {
@@ -20,7 +23,7 @@ namespace assessment
         Random yspeed = new Random();
         tonk tonk = new tonk();
         Rectangle tonkRectangle;
-        bool left, right;
+        bool left, right,turnLeft,turnRight;
         int score, lives;
         string move;
         string playerCallsign;
@@ -75,7 +78,7 @@ namespace assessment
             }
             foreach (rocket m in rocket)
             {
-                m.drawrocket(g);
+              //  m.drawRocket(g);
                 m.moverocket(g);
             }
 
@@ -98,18 +101,28 @@ namespace assessment
 
         private void tmrtonk_Tick(object sender, EventArgs e)
         {
-            if (right) // if right arrow key pressed
+            if (turnRight)
             {
-                move = "right";
-                tonk.movetonk(move);
+                tonk.rotationAngle += 5;
             }
-            if (left) // if left arrow key pressed
+            if (turnLeft)
             {
-                move = "left";
-                tonk.movetonk(move);
+                tonk.rotationAngle -= 5;
             }
 
-        }
+            Invalidate();
+         //  if (right) // if right arrow key pressed
+          //  {
+          //      move = "right";
+          //       tonk.movetonk(move);
+          //   }
+          //   if (left) // if left arrow key pressed
+          //   {
+          //       move = "left";
+          //       tonk.movetonk(move);
+          //   }
+
+    }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -170,22 +183,22 @@ namespace assessment
                         rocket.Remove(m); // removes bullet when in contact with helo
                         break;
                     }
-                }
-                foreach (bigman p in bigman) // when u shoot a helo
+                }   
+            }
+            foreach (bigman p in bigman) // for shooting f16
+            {
+
+                foreach (rocket m in rocket)
                 {
-
-                    foreach (rocket m in rocket)
+                    if (p.bigmanRec.IntersectsWith(m.rocketRec))
                     {
-                        if (p.bigmanRec.IntersectsWith(m.rocketRec))
-                        {
-                            score += 1; // adds a 1 score when bullet hits helo
-                            p.x = -20;// relocate enemy to the left side of the panel
-                            rocket.Remove(m); // removes bullet when in contact with helo
-                            break;
-                        }
+                        score += 1; // adds one for shooting the f16
+                        p.x = -20;// relocate enemy to the left side of the panel
+                        rocket.Remove(m);//removes bullet when in contact with f16
+                        break;
                     }
-
                 }
+
             }
         }
 

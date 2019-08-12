@@ -44,6 +44,7 @@
             this.mnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrbigman = new System.Windows.Forms.Timer(this.components);
             this.tmrShoot = new System.Windows.Forms.Timer(this.components);
+            this.LblMessage = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,11 +168,21 @@
             this.tmrShoot.Enabled = true;
             this.tmrShoot.Tick += new System.EventHandler(this.tmrShoot_Tick);
             // 
+            // LblMessage
+            // 
+            this.LblMessage.AutoSize = true;
+            this.LblMessage.Location = new System.Drawing.Point(555, 425);
+            this.LblMessage.Name = "LblMessage";
+            this.LblMessage.Size = new System.Drawing.Size(35, 13);
+            this.LblMessage.TabIndex = 9;
+            this.LblMessage.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 506);
+            this.Controls.Add(this.LblMessage);
             this.Controls.Add(this.txtCallsign);
             this.Controls.Add(this.txtLives);
             this.Controls.Add(this.label5);
@@ -212,6 +223,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuStop;
         private System.Windows.Forms.Timer tmrbigman;
         private System.Windows.Forms.Timer tmrShoot;
+        private System.Windows.Forms.Label LblMessage;
     }
 }
 
